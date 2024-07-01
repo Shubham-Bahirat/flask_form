@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Capture form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const timeSlot = document.getElementById('timeSlot').value;
+
+    // Display form data (for demonstration purposes)
+    console.log('Name:', name);
+    console.log('Email:', email);
+    console.log('Preferred Time Slot:', timeSlot);
+
+    // Remove selected time slot from dropdown options
+    const timeSlotSelect = document.getElementById('timeSlot');
+    const selectedOption = timeSlotSelect.querySelector(`option[value="${timeSlot}"]`);
+    if (selectedOption) {
+        selectedOption.remove();
+    }
+
+    // Display confirmation message (optional)
+    alert('Form submitted successfully!');
+
+    // Reset the form
+    document.getElementById('appointmentForm').reset();
+});
+
+    </script>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: beige;
+}
+
+.form-container {
+    background: rgb(175, 175, 175);
+    background-image: url('static/VR7.jfif');
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    
+}
+
+.form-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    
+}
+
+.form-description {
+    margin-bottom: 30px;
+    
+}
+
+.form-group {
+    margin-bottom: 5px;
+    height: 80px;
+    
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-button {
+    display: inline-block;
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Form</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div >
+        <p>
+     
+        </p>
+     </div>
+   <div class="form-container">
+      
+        <h1 class="form-title">Appointment Scheduling</h1>
+        <p class="form-description">Please fill out the form below to schedule your appointment.</p>
+
+        <form id="appointmentForm" method="post">
+            <div class="form-group">
+                <label for="name">Name </label>
+                <input type="text" id="name" name="name" placeholder="Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>  
+            </div>
+
+            <div class="form-group">
+                <label for="email">Mobile Number</label>
+                <input type="number" id="email" name="mobile" placeholder="Mobile Number" required>  
+            </div>
+
+          
+            <div class="form-group">
+                <label for="timeSlot">Select your preferred time slot</label>
+                <select id="timeSlot" name="timeSlot" required>
+                    {% for slot in slots %}
+                    <option value="{{ slot }}">{{ slot }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" id="date" name="date" value="{{bdate}}" required>
+            </div>
+
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+</body>
+</html>

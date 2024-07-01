@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: beige;
+}
+
+.form-container {
+    background: rgb(175, 175, 175);
+    background-image: url('static/VR7.jfif');
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    
+}
+
+.form-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    
+}
+
+.form-description {
+    margin-bottom: 30px;
+    
+}
+
+.form-group {
+    margin-bottom: 5px;
+    height: 80px;
+    
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-button {
+    display: inline-block;
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+    </style>
+</head>
+<body>
+    
+   <div class="form-container">
+      
+        <h1 class="form-title">Appointment Confirm </h1>
+        <p class="form-description">{{Msg}}</p>
+        <p>Thank You !!!</p>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+</body>
+</html>

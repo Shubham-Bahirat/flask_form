@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Capture form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const timeSlot = document.getElementById('timeSlot').value;
+
+    // Display form data (for demonstration purposes)
+    console.log('Name:', name);
+    console.log('Email:', email);
+    console.log('Preferred Time Slot:', timeSlot);
+
+    // Remove selected time slot from dropdown options
+    const timeSlotSelect = document.getElementById('timeSlot');
+    const selectedOption = timeSlotSelect.querySelector(`option[value="${timeSlot}"]`);
+    if (selectedOption) {
+        selectedOption.remove();
+    }
+
+    // Display confirmation message (optional)
+    alert('Form submitted successfully!');
+
+    // Reset the form
+    document.getElementById('appointmentForm').reset();
+});
+
+
+
+  
+    </script>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background: white;
+    background-image: url('static/Imgvr.jpg');
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-description {
+    margin-bottom: 20px;
+    color: #777;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    height: 100px;
+   align-content: center;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #f4f4f4;
+ 
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 3px solid #0a0c20;
+    border-radius: 4px;
+}
+
+.submit-button {
+    display: inline-block;
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+h2{
+    color: #ff8080;
+}
+
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Form</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="form-container">
+        
+        <form id="appointmentForm" method="post">
+            <div class="form-group">
+                <p>
+                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                </p>
+             </div>
+             <div class="form-group">
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
+                
+             </div>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <button type="submit" class="submit-button">Check Time Slot</button>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+</body>
+</html>
